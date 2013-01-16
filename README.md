@@ -73,6 +73,21 @@ Example:
 ```
 To experiment with the `properties` partial, add an experiment (e.g. named `product_properties`) and create your changed partial in `app/experiments/product_properties/products/_properties.html.erb`.
 
+## Known issues
+
+- Forms: If you use forms on experiment pages that get re-rendered in case of errors, the variation gets lost. weebo currently doesn't handle this situation automatically. You can remedy the issue by explicitly adding the `gace_var` parameter to the form URL, e.g.:
+``` erb
+<%= form_for current_user, url: edit_user_registration_path(user, params.slice(:gace_var) do |f| %>
+```
+Note that depending on how you've defined the `:path`, you might also need to adjust your regex, e.g.
+``` ruby
+# This matches /products/1/edit but not /products/1 (which would be the target of the edit form by default):
+Weebo.experiment :path => /^\/products\/[\w-]+\/edit/, :name => 'edit_product_form', :code => '13371337-1'
+
+# This, on the other hand, matches both /products/1/edit and /products/1:
+Weebo.experiment :path => /^\/products\/[\w-]+(\/edit)?/, :name => 'edit_product_form', :code => '13371337-1'
+```
+
 ## TODO
 
 - Add tests :)
