@@ -20,9 +20,11 @@ Let's say you want to experiment with your product details page which is availab
 2. Google Analytics asks you for the URLs for the original and variation pages. Enter "yourdomain.com/products" as the original URL and "?gace_var=var_1" for the first variation's URL. Don't worry about the warning that the previews aren't shown correctly.
 3. Google Analytics gives you a JavaScript snippet. You only need the experiment key (e.g. 13371337-1).
 4. Add a file `app/experiments/product_details.rb` with the following code:
+
 ``` ruby
 Weebo.experiment :path => /^\/products\/[\w-]+/, :name => 'product_details', :code => '13371337-1'
 ```
+
 5. Create a file `app/experiments/product_details/var_1/products/show.html.erb` with the appropriate code (e.g. copy and paste the original view's code and change the things you want changed for your experiment).
 
 ## Experiment settings
