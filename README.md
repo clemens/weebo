@@ -76,5 +76,6 @@ To experiment with the `properties` partial, add an experiment (e.g. named `prod
 ## TODO
 
 - Add tests :)
+- Generators/rake tasks to facilitate development (generating experiments, using a variation as the new original etc.)
 - Maybe implement as Rack middleware rather than before/after filters?
 - Maybe use the [deface gem](https://github.com/spree/deface) rather than replacing whole views/partials?
