@@ -79,7 +79,7 @@ To experiment with the `properties` partial, add an experiment (e.g. named `prod
 
 If you use forms on experiment pages that get re-rendered in case of errors, the variation gets lost. weebo currently doesn't handle this situation automatically. You can remedy the issue by explicitly adding the `gace_var` parameter to the form URL, e.g.:
 ``` erb
-<%= form_for current_user, url: edit_user_registration_path(user, params.slice(:gace_var) do |f| %>
+<%= form_for current_user, url: edit_user_registration_path(user, params.slice(:gace_var)) do |f| %>
 ```
 Note that depending on how you've defined the `:path`, you might also need to adjust your regex, e.g.
 ``` ruby
