@@ -12,7 +12,7 @@ Setting up experiments consists of two steps:
 2. Add the experiment in your application
 3. Add variations as views/partials
 
-Example: Experiment for a product details page
+### Example: Experiment for a product details page
 
 Let's say you want to experiment with your product details page which is available as http://yourdomain.com/products/a-product-slug and has its code placed in your Rails application under `app/views/products/show.html.erb`.
 
@@ -27,7 +27,7 @@ Weebo.experiment :path => /^\/products\/[\w-]+/, :name => 'product_details', :co
 
 5. Create a file `app/experiments/product_details/var_1/products/show.html.erb` with the appropriate code (e.g. copy and paste the original view's code and change the things you want changed for your experiment).
 
-## Experiment settings
+### Experiment settings
 
 Every experiment has the following mandatory settings:
 
