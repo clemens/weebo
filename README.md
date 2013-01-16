@@ -2,6 +2,8 @@
 
 Define Google Analytics Content Experiments with ease.
 
+Why the name? It's the little robot from the Walt Disney movie [Flubber](http://en.wikipedia.org/wiki/Flubber_\(film\)).
+
 ## Usage
 
 Setting up experiments consists of two steps:
@@ -57,7 +59,7 @@ weebo takes a few steps to make adding experiments painless:
 Replacing partials works just like replacing whole views: Put the partial containing your change(s) in the same path as your original.
 
 Example:
-``` ruby
+``` erb
 # in app/views/products/show.html.erb we render the partial app/views/products/_properties.html.erb:
 <%= render 'properties', :product => @product %>
 ```
