@@ -16,9 +16,9 @@ Setting up experiments consists of two steps:
 
 Let's say you want to experiment with your product details page which is available as http://yourdomain.com/products/a-product-slug and has its code placed in your Rails application under `app/views/products/show.html.erb`.
 
-1. Create an experiment in Google Analytics with the desired name (e.g. "Product Details")
-2. Google Analytics asks you for the URLs for the original and variation pages. Enter "yourdomain.com/products" as the original URL and "?gace_var=var_1" for the first variation's URL. Don't worry about the warning that the previews aren't shown correctly.
-3. Google Analytics gives you a JavaScript snippet. You only need the experiment key (e.g. 13371337-1).
+1. Create an experiment in Google Analytics with the desired name (e.g. `Product Details`)
+2. Google Analytics asks you for the URLs for the original and variation pages. Enter `yourdomain.com/products` as the original URL and `?gace_var=var_1` for the first variation's URL. Don't worry about the warning that the previews aren't shown correctly.
+3. Google Analytics gives you a JavaScript snippet. You only need the experiment key (e.g. `13371337-1`).
 4. Add a file `app/experiments/product_details.rb` with the following code:
 
 ``` ruby
