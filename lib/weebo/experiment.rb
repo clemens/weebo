@@ -1,7 +1,6 @@
 module Weebo
   class Experiment
-    attr_reader :name, :code
-    attr_accessor :variation
+    attr_reader :name, :code, :variation
 
     def self.from_params(params)
       experiment = Weebo.experiment_by_name(params[:gace_exp])
@@ -29,6 +28,14 @@ module Weebo
 
     def variation_path
       path.join(variation)
+    end
+
+    def variation=(variation)
+      @variation = variation if variations.include?(variation)
+    end
+
+    def variations
+      @variations ||= Dir["#{path}/*"].map { |path| File.basename(path) if File.directory?(path) }.compact
     end
 
     def add_variation_view_path(controller)
