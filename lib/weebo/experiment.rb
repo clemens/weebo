@@ -31,7 +31,7 @@ module Weebo
     end
 
     def variation=(variation)
-      @variation = variation if variations.include?(variation)
+      @variation = variations.include?(variation) ? variation : nil
     end
 
     def variations
