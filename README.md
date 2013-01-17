@@ -94,5 +94,6 @@ Weebo.experiment :path => /^\/products\/[\w-]+(\/edit)?/, :name => 'edit_product
 
 - Add tests :)
 - Generators/rake tasks to facilitate development (generating experiments, using a variation as the new original etc.)
+- Maybe add experiment name as CSS class to body tag for easier styling?
 - Maybe implement as Rack middleware rather than before/after filters?
 - Maybe use the [deface gem](https://github.com/spree/deface) rather than replacing whole views/partials?
